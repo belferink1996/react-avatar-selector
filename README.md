@@ -42,8 +42,61 @@ const value = {
 
 Common props you may want to include:
 
-| Prop     | Requirement | Default Value   | Description                                                      |
-| -------- | ----------- | --------------- | ---------------------------------------------------------------- |
-| onChange | Required    | (value) => null | Callback function, will recieve the image object as a value      |
-| value    | Required    | undefined       | The object given by the onChange handler                         |
-| size     | Optional    | 200             | Must be of type number, defines the size of the elemtn in pixels |
+| Prop     | Requirement | Default Value   | Description                                                  |
+| -------- | ----------- | --------------- | ------------------------------------------------------------ |
+| onChange | Required    | (value) => null | Callback function, will recieve the image object as a value  |
+| value    | Required    | undefined       | The object given by the onChange handler                     |
+| size     | Optional    | 200             | Type number, defines the size of the element in pixels       |
+| iconSize | Optional    | size / 5        | Type number, defines the size of the (camera) icon in pixels |
+
+## Additional imports
+
+### readFile (function)
+
+This function translates the selected file from your input into the "FileData" object, can be used if you choose your own file selection  input, but don't want to handle the FileReader API and/or format the data.
+
+```typescript
+import React from 'react
+import {readFile} from 'react-avatar-selector'
+
+function App(){
+  const [pic, setPic] = React.useState(null)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    readFile(e, (file) => {
+      setPic(file)
+    })
+  }
+
+  return (
+    <input type="file" onChange={handleChange} />
+  )
+}
+```
+
+### FileData (TypeScript)
+
+The interface representing the object cointaining the image file data.
+
+```typescript
+interface FileData {
+  name: string
+  type: string
+  size: string
+  base64: string
+}
+```
+
+Usage:
+
+```typescript
+import {FileData} from 'react-avatar-selector'
+
+function App(){
+  const [pic, setPic] = React.useState<FileData | null>(null)
+
+  return (
+    <AvatarSelector onChange={(value: FileData) => setPic(value)} value={pic} />
+  )
+}
+```

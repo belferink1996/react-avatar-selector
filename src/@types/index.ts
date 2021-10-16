@@ -1,17 +1,21 @@
-import {CSSProperties, MouseEventHandler, ReactNode} from 'react'
+import {ChangeEvent, CSSProperties} from 'react'
+
+export type GetFileFunc = (value: FileData) => void
+
+export type ReadFileFunc = (e: ChangeEvent<HTMLInputElement>, callback: GetFileFunc) => void
 
 export interface FileData {
-  name?: string
-  type?: string
-  size?: string
+  name: string
+  type: string
+  size: string
   base64: string
-  file?: File
 }
 
 export interface AvatarSelectorProps {
   value: FileData | undefined | null
-  onChange: (value: FileData) => null
+  onChange: GetFileFunc
   size?: number
+  iconSize?: number
 }
 
 export interface SvgProps {

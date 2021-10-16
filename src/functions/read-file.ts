@@ -1,7 +1,6 @@
-import {ChangeEvent} from 'react'
-import {FileData} from '../@types'
+import {ReadFileFunc} from '../@types'
 
-const readFile = (e: ChangeEvent<HTMLInputElement>, callback: (value: FileData) => null) => {
+const readFile: ReadFileFunc = (e, callback) => {
   const allFiles = e.target.files
 
   if (allFiles?.length) {

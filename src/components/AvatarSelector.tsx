@@ -6,21 +6,27 @@ import readFile from '../functions/read-file'
 import {AvatarSelectorProps} from '../@types'
 
 const AvatarSelector: (props: AvatarSelectorProps) => JSX.Element = ({
-  value = undefined,
+  value = null,
   onChange = (value) => null,
   size = 200,
+  iconSize = Number(size) / 5,
 }) => {
   return (
     <div
-      className={styles.base}
+      className={`${styles.base} ${styles.border}`}
       style={{
         width: `${size}px`,
         height: `${size}px`,
       }}>
-      {!value && <AvatarPlaceholder className={styles.img} size={size} />}
+      {!value && (
+        <AvatarPlaceholder
+          className={`${styles.center} ${styles.border} ${styles.content}`}
+          size={size}
+        />
+      )}
 
       <input
-        className={styles.inp}
+        className={`${styles.center} ${styles.inp}`}
         type='file'
         accept='.png,.jpg,.jpeg'
         multiple={false}
@@ -28,9 +34,13 @@ const AvatarSelector: (props: AvatarSelectorProps) => JSX.Element = ({
       />
 
       {value ? (
-        <img className={styles.img} src={value.base64} alt='' />
+        <img
+          className={`${styles.center} ${styles.border} ${styles.content}`}
+          src={value.base64}
+          alt=''
+        />
       ) : (
-        <CameraIcon className={styles.camera} size={Number(size) / 6} />
+        <CameraIcon className={`${styles.center} ${styles.icon}`} size={iconSize} />
       )}
     </div>
   )

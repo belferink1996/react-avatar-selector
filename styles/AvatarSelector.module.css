@@ -4,55 +4,40 @@
 }
 
 .base {
-  border-radius: 100%;
-  border: 1px solid var(--black);
   background-color: var(--white);
   display: grid;
   place-items: center;
   position: relative;
-  z-index: 0;
 }
 
-.placeholder {
-  border-radius: 100%;
+.border {
   border: 1px solid var(--black);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  border-radius: 100%;
 }
 
-.camera {
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  z-index: 0 !important;
+}
+
+.icon {
+  z-index: 1 !important;
 }
 
 .inp {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
   opacity: 0;
   overflow: hidden;
   cursor: pointer;
-}
-
-.img {
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  border: 1px solid var(--black);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 2 !important;
 }
