@@ -1,7 +1,6 @@
 # React Avatar Selector
 
-<img src='https://github.com/belferink1996/react-avatar-selector/blob/main/preview-no-value.png' width='150' >
-<img src='https://github.com/belferink1996/react-avatar-selector/blob/main/preview-with-value.png' width='150' >
+<img src='https://github.com/belferink1996/react-avatar-selector/blob/main/preview-no-value.png' width='150' ><img src='https://github.com/belferink1996/react-avatar-selector/blob/main/preview-with-value.png' width='150' >
 
 ## Installation and usage
 
