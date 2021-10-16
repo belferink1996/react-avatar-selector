@@ -7,7 +7,7 @@
     "component",
     "ui"
   ],
-  "version": "0.1.2",
+  "version": "0.1.21",
   "private": false,
   "license": "ISC",
   "main": "dist/index.js",

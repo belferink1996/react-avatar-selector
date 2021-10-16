@@ -90,7 +90,7 @@ interface FileData {
 Usage:
 
 ```typescript
-import {FileData} from 'react-avatar-selector'
+import AvatarSelector, {FileData} from 'react-avatar-selector'
 
 function App(){
   const [pic, setPic] = React.useState<FileData | null>(null)
