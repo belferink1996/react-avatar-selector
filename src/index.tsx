@@ -1,3 +1,3 @@
-import Example from './components/Example'
+import AvatarSelector from './components/AvatarSelector'
 
-export default Example
+export default AvatarSelector

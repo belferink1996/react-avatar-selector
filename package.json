@@ -1,6 +1,6 @@
 {
-  "name": "react-npm-template",
-  "description": "Template for React libraries to publish on npm",
+  "name": "react-avatar-selector",
+  "description": "An image selector targeted for profile pictures (avatars)",
   "author": "Ben Elferink",
   "keywords": [
     "react",
@@ -14,7 +14,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/belferink1996/React-NPM-template.git"
+    "url": "git+https://github.com/belferink1996/react-avatar-selector.git"
   },
   "scripts": {
     "prebuild": "rm -rf dist",
