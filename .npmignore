@@ -2,5 +2,6 @@ node_modules
 .DS_Store
 .git
 src
-preview.gif
+preview-no-value.png
+preview-with-value.png
 tsconfig.json
